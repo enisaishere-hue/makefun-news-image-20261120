@@ -25,7 +25,7 @@ def sha256_of(path):
 
 
 def main(argv):
-    output_dir = argv[1] if len(argv) > 1 else "/output"
+    output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     here = os.path.dirname(os.path.abspath(__file__))
     source = os.path.join(here, ENTRY_NAME)
     target = os.path.join(output_dir, ENTRY_NAME)

@@ -1,8 +1,8 @@
 # The World Today — Friday, 20 November 2026
 
-![Competition](https://make.fun/badge/news-image-20261120.svg)
-![Rank](https://make.fun/badge/news-image-20261120/enisaishere-hue/makefun-news-image-20261120/rank.svg)
-![Reward](https://make.fun/badge/news-image-20261120/enisaishere-hue/makefun-news-image-20261120/reward.svg)
+[![make.fun · news-image-20261120](https://make.fun/badge/news-image-20261120.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
+[![rank](https://make.fun/badge/news-image-20261120/enisaishere-hue/makefun-news-image-20261120/rank.svg)](https://make.fun/bounty/news-image-20261120/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
+[![reward](https://make.fun/badge/news-image-20261120/enisaishere-hue/makefun-news-image-20261120/reward.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 
 A one-page newspaper poster summing up the world news of **Friday, 20 November 2026**,
 built for the [news-image-20261120](https://make.fun) competition on make.fun.
@@ -27,7 +27,7 @@ Research notes: [RESEARCH.md](RESEARCH.md).
 ## How it was made
 
 - The poster was drawn entirely with Python (Pillow): gradients, skyline and
-  palm silhouettes, cyclone spiral, mountains, cricket pitch, gold bars and
+  sailboats, cyclone spiral, mountains, cricket pitch, gold bars and
   film strip are all vector-style shapes drawn in code — no photographs, no
   logos, no pasted artwork.
 - `render_poster.py` renders `entry.png` (1024×1024, 110,115 bytes).
