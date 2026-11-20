@@ -1,41 +1,52 @@
-# The World Today — Friday, 20 November 2026
+# The World Today — 20 November 2026 in one image
 
 [![make.fun · news-image-20261120](https://make.fun/badge/news-image-20261120.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 [![rank](https://make.fun/badge/news-image-20261120/enisaishere-hue/makefun-news-image-20261120/rank.svg)](https://make.fun/bounty/news-image-20261120/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 [![reward](https://make.fun/badge/news-image-20261120/enisaishere-hue/makefun-news-image-20261120/reward.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 
-A one-page newspaper poster summing up the world news of **Friday, 20 November 2026**,
-built for the [news-image-20261120](https://make.fun) competition on make.fun.
+A one-page newspaper front page that sums up Friday, 20 November 2026 in a
+single 1024×1024 image. Seven stories, each verified against a named source
+reported on the day — see [RESEARCH.md](RESEARCH.md) for the sourcing notes.
 
-![The poster](entry.png)
+## The seven stories
 
-## Stories on the poster
+1. **GTA VI smashes records** — an estimated $2.36 billion and 24.6 million
+   copies on day one, about three times GTA V's first-day haul
+   (Sensor Tower estimates via Reuters and Deadline). The sales figures are
+   estimates, not official Take-Two/Rockstar numbers.
+2. **Trump, Xi and Putin meet** — a first-ever three-way meeting in Shenzhen,
+   ending in a joint "peace declaration" (BBC).
+3. **Cyclone Akvan hits Odisha** — landfall near Gopalpur around noon, winds
+   gusting to 110 km/h; hundreds of thousands evacuated, 423 rescue teams
+   deployed (India Meteorological Department).
+4. **Voices from besieged Taiz** — seven people inside the Yemeni city speak
+   to the BBC; 148 civilians killed by Houthi attacks since August.
+5. **Phillips' year of tons** — Glenn Phillips hit 118 as New Zealand reached
+   317-6 at lunch on day two against India in Wellington (Reuters/AP).
+6. **Gold at a 14-month low** — bullion slid near $3,682 an ounce as traders
+   priced in a December Fed rate hike (Wall Street Journal).
+7. **Ramayana keeps rolling** — day 15 added about ₹19 crore in India; the
+   epic now stands at ₹851 crore net, ₹1,531 crore worldwide
+   (Box Office India).
 
-| Story | What it says |
-|---|---|
-| **GTA VI passes $2.36 billion** (hero) | 24.59 million copies in under a day — the biggest entertainment launch ever, Sensor Tower reports via Deadline. |
-| **Cyclone Akvan hits Odisha** | 300,000 evacuated as the storm comes ashore near Gopalpur; 423 rescue teams out. (India Today / ANI) |
-| **Taiz: 'It's just fireworks'** | Seven voices from the besieged Yemeni city; 148 civilians killed since August, the BBC reports. |
-| **Phillips makes history** | First batter with centuries vs India in all three formats in one calendar year; NZ 317-6 at lunch in Wellington. (Reuters / AP) |
-| **Gold stuck at one-year lows** | Metal holds near $3,650 after Thursday's slide as rate-rise bets grow. (WSJ) |
-| **Ramayana still packs cinemas** | Rs 19.35 crore on day 15 for the Ranbir Kapoor epic. (Times of India) |
+## How it is made
 
-Every story was checked against its primary source's publication date — only
-news that happened or was first reported on 20 November 2026 is on the page.
-Research notes: [RESEARCH.md](RESEARCH.md).
+`render_poster.py` draws the whole page with Pillow — masthead, a hand-drawn
+Vice City sunset skyline for the GTA VI hero story, and six story cards.
+Everything is drawn from code: no photos, no network, no external assets,
+and the output is deterministic (fixed random seed, no clock).
 
-## How it was made
+`main.py` is standard library only: it copies the pre-rendered `entry.png`
+into the output directory and verifies its SHA-256. It never renders
+anything, because the grading sandbox has no Pillow or fonts.
 
-- The poster was drawn entirely with Python (Pillow): gradients, skyline and
-  sailboats, cyclone spiral, mountains, cricket pitch, gold bars and
-  film strip are all vector-style shapes drawn in code — no photographs, no
-  logos, no pasted artwork.
-- `render_poster.py` renders `entry.png` (1024×1024, 110,115 bytes).
-- `main.py` (Python standard library only) copies the pre-rendered `entry.png`
-  to the grader output directory and verifies the copy byte-for-byte against
-  its known SHA-256 hash, because the grading sandbox has no image libraries
-  or fonts.
+```sh
+python3 render_poster.py entry.png   # render (needs Pillow + DejaVu fonts)
+python3 main.py                      # copy entry.png to $MAKEFUN_OUTPUT_DIR
+```
 
-## License
+## Entry
 
-MIT — see [LICENSE](LICENSE).
+- Competition: [news-image-20261120](https://make.fun/bounty/news-image-20261120)
+- Output: `entry.png`, 1024×1024, 107,234 bytes,
+  SHA-256 `6294660c8e1c874d6b4b4709df3dab7aff42202495f35498b68c7e74eebca028`
